@@ -115,16 +115,3 @@ uint Bitset::count() const {
     }
     return count;
 }
- 
-int main() { 
-    Bitset bs = Bitset(5, 2); 
-    std::cout << bs << std::endl; 
-    std::cout << bs.count() << std::endl;
-    // std::cout << bs.flip() << std::endl; 
-    // bs.set(0); 
-    // bs.set(1); 
-    // std::cout << bs << std::endl;
-    // bs.reset(0);  
-    // std::cout << bs << std::endl;
-    return 0; 
-}
