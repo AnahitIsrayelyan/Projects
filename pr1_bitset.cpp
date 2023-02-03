@@ -18,6 +18,9 @@ public:
     bool operator[](uint) const;
     bool test(uint) const;
     uint count() const;
+    bool all() const;
+    bool any() const;
+    bool none() const;
 }; 
  
 //doesn't work properly for len > 32, e.g. Bitset(34, 1) 
@@ -114,4 +117,20 @@ uint Bitset::count() const {
         }
     }
     return count;
+}
+
+bool Bitset::all() const {
+    uint count = this->count();
+    if(count == this->m_length) { return true;}
+    return false;
+}
+
+bool Bitset::any() const {
+    uint count = this->count();
+    if(count) { return true;}
+    return false;
+}
+
+bool Bitset::none() const {
+    return !(this->all());
 }
