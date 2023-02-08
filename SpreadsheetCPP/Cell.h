@@ -1,21 +1,7 @@
 #include <string>
+#include "Date.cpp"        // must be header file, not appropriate includes
 
 enum class Color {white, red, green, blue};
-
-class Date {
-public:
-	Date(int, int, int);
-	void setYear(int);
-	void setMonth(int);
-	void setDay(int);
-	int getYear() const;
-	int getMonth() const;
-	int getDay() const;
-private:
-	int m_year;
-	int m_month;
-	int m_day;
-};
 
 class Cell {
 public:
