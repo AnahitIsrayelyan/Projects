@@ -1,41 +1,6 @@
 #include "Cell.h"
 #include <cctype>
 
-///////////// date ///////////////
-
-Date::Date(int d, int m, int y) : m_year{y}, m_month{m}, m_day{d} {}
-
-void Date::setYear(int y) {
-	this->m_year = y;
-}
-
-void Date::setMonth(int m) {
-	this->m_month = m;
-}
-
-void Date::setDay(int d) {
-	this->m_day = d;
-}
-
-int Date::getYear() const {
-	return this->m_year;
-}
-
-int Date::getMonth() const {
-	return this->m_month;
-}
-
-int Date::getDay() const {
-	return this->m_day;
-}
-
-bool operator==(const Date& src, const Date& ptr) {
-	return (src.getYear() == ptr.getYear() and 
-	src.getMonth() == ptr.getMonth() and
-	src.getDay() == ptr.getDay());
-}
-
-//////////// cell ///////////////
 
 Cell::Cell(const std::string& str = "", Color clr = Color::white) : m_value{str}, m_color{clr} {}
 
@@ -174,5 +139,3 @@ bool operator==(const Cell& src, const Cell& ptr) {
 	return (src.getValue() == ptr.getValue() and
 			src.getColor() == ptr.getColor());
 }
-
-
