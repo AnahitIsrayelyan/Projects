@@ -1,6 +1,6 @@
 class Date {
 public:
-    Date() = default;
+	Date() = default;
 	Date(int, int, int);
 public:
 	void setYear(int);
@@ -9,7 +9,7 @@ public:
 	int getYear() const;
 	int getMonth() const;
 	int getDay() const;
-    void displayDate();
+	void displayDate();
 private:
 	int m_year;
 	int m_month;
