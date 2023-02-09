@@ -37,7 +37,7 @@ class Spreadsheet:
 
     def add_column(self, col: int):
         cell = Cell.Cell()
-        for i in range(len(self.__cells[0])):
+        for i in range(len(self.__cells)):
             self.__cells[i].insert(col, cell)
 
     def remove_column(self, col: int):
