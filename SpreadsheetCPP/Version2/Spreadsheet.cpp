@@ -50,9 +50,29 @@ void Spreadsheet::removeColumn(int col) {
 }
 
 void Spreadsheet::swapRows(int row1, int row2){
-	return;
+	for(auto& [key, cell]: m_cells) {
+		if(key.first == row1) {
+			auto it = m_cells.find(std::make_pair(row2, key.second));
+			if(it != m_cells.end()) {
+				std::swap(cell, it->second);
+			} else {
+				m_cells[std::make_pair(row2, key.second)] = std::move(cell);
+				m_cells.erase(key);
+			}
+		}
+	}
 }
 
 void Spreadsheet::swapColumns(int col1, int col2) {
-	return;
+	for(auto& [key, cell]: m_cells) {
+		if(key.second == col1) {
+			auto it = m_cells.find(std::make_pair(key.first, col2));
+			if(it != m_cells.end()) {
+				std::swap(cell, it->second);
+			} else {
+				m_cells[std::make_pair(key.first, col2)] = std::move(cell);
+				m_cells.erase(key);
+			}
+		}
+	}
 }
