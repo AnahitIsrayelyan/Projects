@@ -70,3 +70,15 @@ void Spreadsheet::swapColumns(int col1, int col2) {
 		}
 	}
 }
+
+void Spreadsheet::writeInFile() const {
+	std::fstream outfile {"test.txt", std::ios_base::out};
+	if(!outfile) {
+		std::cerr << "Error while opening output file!" << std::endl;
+		return;
+	}
+	for(auto& [key, cell]: m_cells) {
+		// auto it = m_cells[(key, value)];
+		outfile << "(" << key.first << ", " << key.second << ")" << " -> " << (*cell).getStringValue() << std::endl;
+	}
+}
