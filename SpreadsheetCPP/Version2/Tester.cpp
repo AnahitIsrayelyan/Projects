@@ -176,8 +176,28 @@ void testSpreadsheetSetGet() {
 	} catch (...) {
 		std::cout << "passed removeColumn" << std::endl;
 	}
+}
 
-	// implement and test swaps
+void testSpreadsheetSwap() {
+	Spreadsheet sp = Spreadsheet();
+	sp.setIntCell(1, 1, 5);
+	sp.setIntCell(1, 2, 4);
+	sp.setIntCell(2, 1, 10);
+	sp.setStringCell(2, 2, "hello");
+	sp.swapRows(1, 2);
+	if(sp.getCell(1, 1).getStringValue() == "10" and sp.getCell(1, 2).getStringValue() == "hello") {
+		std::cout << "passed swapRows" << std::endl;
+	} else {
+		std::cout << "failed swapRows" << std::endl;
+	}
+
+	sp.swapRows(1, 2);
+	sp.swapColumns(1, 2);
+	if(sp.getCell(1, 1).getStringValue() == "4" and sp.getCell(2, 1).getStringValue() == "hello") {
+		std::cout << "passed swapColumns" << std::endl;
+	} else {
+		std::cout << "failed swapColumns" << std::endl;
+	}
 }
 
 
@@ -187,4 +207,5 @@ int main() {
 	testStringCell();
 	testDateCell();
 	testSpreadsheetSetGet();
+	testSpreadsheetSwap();
 }
