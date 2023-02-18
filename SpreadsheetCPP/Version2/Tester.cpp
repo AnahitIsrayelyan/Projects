@@ -198,6 +198,8 @@ void testSpreadsheetSwap() {
 	} else {
 		std::cout << "failed swapColumns" << std::endl;
 	}
+	
+	sp.writeInFile();
 }
 
 
