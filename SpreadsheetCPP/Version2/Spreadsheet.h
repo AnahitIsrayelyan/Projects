@@ -15,6 +15,7 @@ public:
 	void removeColumn(int col);
 	void swapRows(int row1, int row2);
 	void swapColumns(int col1, int col2);
+	void writeInFile() const;
 private:
 	std::map<std::pair<int, int>, std::unique_ptr<Cell>> m_cells;
 };
