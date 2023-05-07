@@ -3,6 +3,7 @@
 from random import randint
 
 max_value = 2**32 - 1
+# as soon as numbers in python are objects and aren't 4 bytes, numbers_to_generate != 4 bln
 numbers_to_generate = 250000000
 numbers_each_loop = 500000
 
