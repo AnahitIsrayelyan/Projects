@@ -1,3 +1,5 @@
+# for the last part of the task we must have a file with no dublicate numbers
+
 num1 = None
 num2 = None
 
