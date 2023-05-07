@@ -1,4 +1,8 @@
-num = 1
+# in this file we will use the output file of the previous part of the program as input
+# we will divide the file into smaller files, sort them
+
+
+# num = 1
 
 nums_in_each_file = 10000000
 eof = False
@@ -6,8 +10,8 @@ with open('myfile.txt', 'r') as readFile:
     while not eof:
         filename = 'smallFile' + str(num)
         num += 1
-        print(filename)
-        with open(filename, 'a') as writeFile:
+#         print(filename)
+        with open(filename, 'a') as writeFile:   
             list_to_sort = []
             for _ in range(nums_in_each_file):
                 read_num = readFile.readline()
@@ -19,4 +23,4 @@ with open('myfile.txt', 'r') as readFile:
             for i in list_to_sort:
                 writeFile.write(str(i))
                 writeFile.write('\n')
-    print("DONE")
+#     print("DONE")
