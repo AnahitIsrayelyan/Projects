@@ -1,3 +1,5 @@
+# as soon as we already have sorted smaller files, we can merge them 
+
 files = []
 num_of_files = 26
 for i in range(1, num_of_files + 1):
@@ -16,7 +18,7 @@ for i in files:
 
 print(nums_to_sort)
 
-num = 1
+# num = 1
 with open('sortedOutputSecondTask.txt', 'a') as outputFile:
     while True:
         min_value = min(nums_to_sort)
@@ -34,6 +36,6 @@ with open('sortedOutputSecondTask.txt', 'a') as outputFile:
         if nums_to_sort == []:
             break
 
-        print('loop', num)
-        num += 1
+#         print('loop', num)
+#         num += 1
         
