@@ -1,3 +1,5 @@
+# here we will generate random numbers' chunks, save them in a list, then write in a file
+
 from random import randint
 
 max_value = 2**32 - 1
