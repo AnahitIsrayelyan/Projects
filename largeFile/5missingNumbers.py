@@ -1,3 +1,5 @@
+# here we will read two consecutive numbers, find the missing ones and write to the final file
+
 num1 = None
 num2 = None
 
