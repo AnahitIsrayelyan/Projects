@@ -8,3 +8,7 @@ The solution is:
 1. for sorting, divide the large file into smaller files, sort them separately, then merge them using merge-sort and save them in another file
 2. when we already have the sorted file, we can read a certain range of numbers or two numbers each time, check if they are duplicates or not, and write only non-duplicates to the file
 3. with the same logic as in the previous point, read numbers of a certain range, find the missing ones and write to the final file
+
+
+
+** In the 'test sample' folder you can find the same solution to the problem for fewer numbers to check the logic of the solution
