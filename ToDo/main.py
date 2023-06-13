@@ -4,19 +4,19 @@ from toDo import ToDo
 from datetime import datetime
 
 
+# functions for button commands
 def update():
     taskList.delete(0, tk.END)
 
     for task in todo._tasks:
         text = task.getText()
 
-        lessDay = False
-        if task.lessThanDay():
-            lessDay = True
+        if task.isCompleted():
+            text = "[Completed] " + text
         elif task.closeToDeadline():
             text = "[Close to deadline] " + text
-        elif task.isCompleted():
-            text = "[Completed] " + text
+        elif task.lessThanDay():
+            text = "[Less than a day] " + text
             
         
         if task.getDeadline():
@@ -25,6 +25,7 @@ def update():
         taskList.insert(tk.END, text)
         
     completedTasksLabel.config(text=todo.completedTasks())
+    entry.delete(0, tk.END)
 
 
 def addTask():
@@ -32,7 +33,7 @@ def addTask():
     if newText:
         todo.createTask(text=newText)
         update()
-        entry.delete(0, tk.END)
+        
 
 def deleteTask():
     currTasks = taskList.curselection()
@@ -72,6 +73,7 @@ def editTask():
 
 
 
+# window and it attributes 
 todo = ToDo()
 
 window = tk.Tk()
@@ -79,25 +81,29 @@ window.title("ToDo List")
 
 taskList = tk.Listbox(window, width=50)
 # add paddings in pixels around widgets
-taskList.pack(pady=10)
+taskList.grid(row=0, column=0, columnspan=2, padx=10, pady=10)
 
 completedTasksLabel = tk.Label(window, text=todo.completedTasks())
 # pack places the widget in the window based on available space and packing options
-completedTasksLabel.pack()  
+completedTasksLabel.grid(row=1, column=0, columnspan=2, padx=10, pady=5)
 
 entry = tk.Entry(window, width=40)
-entry.pack(pady=10)
+entry.grid(row=2, column=0, columnspan=2, padx=10, pady=10)
 
 buttonAdd = tk.Button(window, text="Add Task", command=addTask)
-buttonAdd.pack(pady=5)
+buttonAdd.grid(row=3, column=0, padx=5, pady=5)
+
 buttonDelete = tk.Button(window, text="Delete Task", command=deleteTask)
-buttonDelete.pack(pady=5)
+buttonDelete.grid(row=3, column=1, padx=5, pady=5)
+
 buttonComplete = tk.Button(window, text="Mark as Completed", command=completeTask)
-buttonComplete.pack(pady=5)
-buttonComplete = tk.Button(window, text="Add deadline", command=addDeadline)
-buttonComplete.pack(pady=5)
+buttonComplete.grid(row=4, column=0, padx=5, pady=5)
+
+buttonDeadline = tk.Button(window, text="Add Deadline", command=addDeadline)
+buttonDeadline.grid(row=4, column=1, padx=5, pady=5)
+
 buttonEdit = tk.Button(window, text="Edit Task", command=editTask)
-buttonEdit.pack(pady=5)
+buttonEdit.grid(row=5, column=0, columnspan=2, pady=5)
 
 
-window.mainloop()
+window.mainloop() 

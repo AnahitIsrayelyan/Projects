@@ -22,8 +22,9 @@ class ToDo:
             self._completedTasksNum -= 1
 
     def completeTask(self, task: Task):
-        task.complete()
-        self._completedTasksNum += 1
+        if not task.isCompleted():
+            task.complete()
+            self._completedTasksNum += 1
 
     def editTask(self, task: Task, text: str = None, deadline: datetime = None):
         task.edit(text, deadline)
