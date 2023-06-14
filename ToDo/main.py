@@ -80,11 +80,9 @@ window = tk.Tk()
 window.title("ToDo List")
 
 taskList = tk.Listbox(window, width=50)
-# add paddings in pixels around widgets
 taskList.grid(row=0, column=0, columnspan=2, padx=10, pady=10)
 
 completedTasksLabel = tk.Label(window, text=todo.completedTasks())
-# pack places the widget in the window based on available space and packing options
 completedTasksLabel.grid(row=1, column=0, columnspan=2, padx=10, pady=5)
 
 entry = tk.Entry(window, width=40)
