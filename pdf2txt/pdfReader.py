@@ -2,6 +2,11 @@ import re
 import os
 import PyPDF2
 
+"""
+PDFReader is a class that allows you to extract text from a PDF file, 
+normalize and search for words within it, and generate an output file 
+containing the found words. This class makes use of the PyPDF2 library for PDF processing.
+"""
 
 """ 
 Some parts of the code are taken from searchEngine project, 
