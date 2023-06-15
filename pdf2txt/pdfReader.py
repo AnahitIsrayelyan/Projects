@@ -75,9 +75,9 @@ class PDFReader:
 
 
 if __name__ == "__main__":
-    inputPath = "C:\\Users\\XPS\\Desktop\\VS\\AlgorithmsDataStructures\\pdf2txt\\input.pdf"
-    outputPath = "C:\\Users\\XPS\\Desktop\\VS\\AlgorithmsDataStructures\\pdf2txt\\output.txt"
-    dictt = "C:\\Users\\XPS\\Desktop\\VS\\AlgorithmsDataStructures\\pdf2txt\\words_alpha.txt"
+    inputPath = "input.pdf"
+    outputPath = "output.txt"
+    dictt = "words_alpha.txt"
 
     reader = PDFReader(inputPath, outputPath, dictt)
     reader.execute()
