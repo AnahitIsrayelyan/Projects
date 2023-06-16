@@ -4,9 +4,9 @@ from fileReader import *
 
 
 if __name__ == "__main__":
-    input_path = "C:\\Users\\XPS\\Desktop\\VS\\AlgorithmsDataStructures\\CubeEncryption\\input.txt"
-    output_path = "C:\\Users\\XPS\\Desktop\\VS\\AlgorithmsDataStructures\\CubeEncryption\\output.txt"
-    final_output_path = "C:\\Users\\XPS\\Desktop\\VS\\AlgorithmsDataStructures\\CubeEncryption\\FinalOutput.txt"
+    input_path = "input.txt"
+    output_path = "output.txt"
+    final_output_path = "FinalOutput.txt"
 
     fileReader = FileReader(input_path)
     raw_text = fileReader.read()
