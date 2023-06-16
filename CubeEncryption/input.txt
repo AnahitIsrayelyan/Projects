@@ -1,0 +1,3 @@
+Hello, dear students!
+
+We are going to study the "Hello, world!" program in Python.
