@@ -10,7 +10,6 @@ to enter commands. The program checks the accuracy of the answers and executes t
 - Generates exam-style questions for students to answer.
 - Checks the correctness of student answers and executes the correct commands.
 - Provides feedback on the number of correct answers and exam results.
-- Simulates a file system using a tree structure.
 - All commands are implemented within the emulator and not delegated to a real Linux environment.
 
 ## Usage
